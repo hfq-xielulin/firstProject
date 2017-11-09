@@ -45,6 +45,9 @@ public class userController {
 		user.setName(name);
 		user.setPwd(pwd);
 		user=service.add(user);
+		/*if (name!=null)
+			throw new Exception();*/
 		return ResultUtil.success(user);
+		
 	}
 }

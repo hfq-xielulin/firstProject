@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import com.xll.myProject.Exception.MyException;
 import com.xll.myProject.bean.User;
 import com.xll.myProject.dao.userDao;
+import com.xll.myProject.enums.codeEnum;
 import com.xll.myProject.service.userServie;
 @Service
 public class userServiceImpl implements userServie{
@@ -25,11 +26,11 @@ public class userServiceImpl implements userServie{
 	@Override
 	public User add(User user) throws Exception {
 		if(user.getName()==null)
-			throw new MyException(100,"用户名不能为空");
+			throw new MyException(codeEnum.NULL_NAME);
 		if(user.getPwd()==null)
-			throw new MyException(101,"密码不能为空");
+			throw new MyException(codeEnum.NULL_PWD);
 		if(dao.findByName(user.getName())!=null)
-			throw new MyException(102,"该用户已存在，请重新注册或直接登录");
+			throw new MyException(codeEnum.EXIST_NAME);
 		else 
 		    return dao.save(user);
 	}
