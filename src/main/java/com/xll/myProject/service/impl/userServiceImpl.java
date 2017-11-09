@@ -1,6 +1,9 @@
 package com.xll.myProject.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.xll.myProject.Exception.MyException;
@@ -40,5 +43,15 @@ public class userServiceImpl implements userServie{
 	public User findByName(String name) {
 		return dao.findByName(name);
 	}
+
+
+	@Override
+	public List<User> findAll(Pageable pageable) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	
 
 }

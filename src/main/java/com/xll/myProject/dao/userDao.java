@@ -1,5 +1,7 @@
 package com.xll.myProject.dao;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.xll.myProject.bean.User;

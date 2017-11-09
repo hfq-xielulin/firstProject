@@ -1,5 +1,8 @@
 package com.xll.myProject.service;
 
+import java.util.List;
+
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.xll.myProject.bean.User;
@@ -36,5 +39,12 @@ public interface userServie {
 	 * @date:2017年11月9日 下午2:58:53
 	 */
 	public User findByName(String name);
+	
+	/**
+	 * 分页查询
+	 * @param pageable
+	 * @return
+	 */
+	public List<User> findAll(Pageable pageable);
 	
 }

@@ -17,7 +17,6 @@ public class userController {
 	@Autowired
 	userServie service;
 	
-	
 	@RequestMapping("login/{name}/{pwd}")
 	public String login(@PathVariable("name")String name,@PathVariable("pwd")String pwd) {
 		User user=new User();
