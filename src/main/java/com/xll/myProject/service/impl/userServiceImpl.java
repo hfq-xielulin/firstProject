@@ -3,6 +3,7 @@ package com.xll.myProject.service.impl;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -19,10 +20,15 @@ public class userServiceImpl implements userServie{
 	@Override
 	public User login(String name, String pwd) {
 		User user=new User();
-		if(name!=null&&pwd!=null) {
-			user=dao.findByNameAndPwd(name,pwd);
-		}
-		return user;
+		if(name==null)
+			throw new MyException(codeEnum.NULL_NAME);
+		if(pwd==null)
+			throw new MyException(codeEnum.NULL_PWD);
+		user=dao.findByNameAndPwd(name,pwd);
+		if(user==null)
+			throw new MyException(codeEnum.NULL_USER);
+		else
+			return user;
 	}
 	
 	
@@ -46,9 +52,9 @@ public class userServiceImpl implements userServie{
 
 
 	@Override
-	public List<User> findAll(Pageable pageable) {
+	public Page<User> findAll(Pageable pageable) {
 		// TODO Auto-generated method stub
-		return null;
+		return dao.findAll(pageable);
 	}
 
 

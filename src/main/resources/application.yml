@@ -6,10 +6,17 @@ spring:
     password: 123
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: updat 
     show-sql: true
-   
-server:
+  freemarker:
+    template-loader-path: classpath:/templates/
+    
+    
+
+  mvc:
+    static-path-pattern: /static/**
+    
+server: 
   tomcat:
     uri-encoding: UTF-8
         

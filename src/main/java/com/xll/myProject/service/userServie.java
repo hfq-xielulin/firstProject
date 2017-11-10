@@ -2,6 +2,7 @@ package com.xll.myProject.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
@@ -45,6 +46,6 @@ public interface userServie {
 	 * @param pageable
 	 * @return
 	 */
-	public List<User> findAll(Pageable pageable);
+	public Page<User> findAll(Pageable pageable);
 	
 }
