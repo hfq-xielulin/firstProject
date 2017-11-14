@@ -6,7 +6,7 @@ spring:
     password: 123
   jpa:
     hibernate:
-      ddl-auto: updat 
+      ddl-auto: update
     show-sql: true
   freemarker:
     template-loader-path: classpath:/templates/

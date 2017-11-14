@@ -13,13 +13,9 @@
         <!-- CSS -->
         <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
         <link rel="stylesheet" href="../static/assets/css/reset.css">
-        <link rel="stylesheet" href="../static/assets/css/supersized.css">
+      <!--   <link rel="stylesheet" href="../static/assets/css/supersized.css"> -->
         <link rel="stylesheet" href="../static/assets/css/style.css">
 
-        <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-        <!--[if lt IE 9]>
-            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
 
     </head>
 
@@ -27,14 +23,14 @@
 
         <div class="page-container">
             <h1>Login</h1>
-            <form action="user/login/name/pwd" method="post">
+            <form action="/user/login" method="post" id="form">
                 <input type="text" name="name" class="name" placeholder="name">
                 <input type="password" name="pwd" class="pwd" placeholder="pwd">
                 <button type="submit">Sign me in</button>
                 <div class="error"><span>+</span></div>
             </form>
             <div class="connect">
-                <p>Or connect with:</p>
+               
                 <p>
                    
                 </p>
@@ -42,10 +38,10 @@
         </div>
 
         <!-- Javascript -->
-        <script src="assets/js/jquery-1.8.2.min.js"></script>
-        <script src="assets/js/supersized.3.2.7.min.js"></script>
-        <script src="assets/js/supersized-init.js"></script>
-        <script src="assets/js/scripts.js"></script>
+        <script src="../static/assets/js/jquery-1.8.2.min.js"></script>
+        <script src="../static/assets/js/supersized.3.2.7.min.js"></script>
+        <script src="../static/assets/js/supersized-init.js"></script>
+        <script src="../static/assets/js/scripts.js"></script>
 
     </body>
 

@@ -6,6 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,27 +24,19 @@ public class userController {
 	@Autowired
 	userServie service;
 	
-	@RequestMapping("/indexs")
+	@RequestMapping("/index")
 	public ModelAndView loginPage() {
-		System.out.println("1111");
 		return new ModelAndView("index");
 	}
 	
 	
-	
-	/*@RequestMapping("/index")
-	public String loginPage() {
-		return "index";
-	}
-	*/
-	
-	
 	@RequestMapping("/login")
-	public String login(@PathVariable("name")String name,@PathVariable("pwd")String pwd) {
-		User user=new User();
-		user=service.login(name, pwd);
-		if(user!=null)
-			return "登录成功，欢迎"+user.getName()+"<br/>您的信息为：<br/>"+user.toString();
+	public String login(@ModelAttribute("form") User user) {
+		
+		User users=new User();
+		users=service.login(user.getName(), user.getPwd());
+		if(users!=null)
+			return "登录成功，欢迎"+users.getName()+"<br/>您的信息为：<br/>"+users.toString();
 		else
 			return "登录失败，请重新输入";
 	}
