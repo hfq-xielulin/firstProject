@@ -38,7 +38,7 @@ public class userController {
 	*/
 	
 	
-	@RequestMapping("login/{name}/{pwd}")
+	@RequestMapping("/login")
 	public String login(@PathVariable("name")String name,@PathVariable("pwd")String pwd) {
 		User user=new User();
 		user=service.login(name, pwd);
