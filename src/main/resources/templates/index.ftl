@@ -1,49 +1,40 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="../static/css/Login_style.css" />
+<script type="text/javascript" src="../static/Javascript/Login_javascript.js"></script>
+</head>
+<body>
+<h2 align="center">随手一写的登录页面</h2>
+<div class="login_frame"></div>
+<div class="LoginWindow">
+  <div>
+    <form method="post" action="/user/login" onsubmit="return user_input()" class="login" id="form">
+    <p>
+      <label for="login">帐号:</label>
+      <input type="text" name="name" id="name" class="name" value="name">
+    </p>
 
-<!DOCTYPE html>
-<html lang="en" class="no-js">
+    <p>
+      <label for="password">密码:</label>
+      <input type="password" name="pwd" id="pwd"  class="pwd" value="pwd">
+    </p>
 
-    <head>
+    <p class="login-submit">
+      <button type="submit" class="login-button">登录</button>
+    </p>
 
-        <meta charset="utf-8">
-        <title>Fullscreen Login</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="">
-        <meta name="author" content="">
+    </form>
+    <p class="registration"><a href="register">注册</a></p>
+  </div>
+</div>
 
-        <!-- CSS -->
-        <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=PT+Sans:400,700'>
-        <link rel="stylesheet" href="../static/assets/css/reset.css">
-      <!--   <link rel="stylesheet" href="../static/assets/css/supersized.css"> -->
-        <link rel="stylesheet" href="../static/assets/css/style.css">
+<div id="timeArea"><script> LoadBlogParts();</script></div>
 
+<div style="text-align:center;">
 
-    </head>
+</div>
 
-    <body>
-
-        <div class="page-container">
-            <h1>Login</h1>
-            <form action="/user/login" method="post" id="form">
-                <input type="text" name="name" class="name" placeholder="name">
-                <input type="password" name="pwd" class="pwd" placeholder="pwd">
-                <button type="submit">Sign me in</button>
-                <div class="error"><span>+</span></div>
-            </form>
-            <div class="connect">
-               
-                <p>
-                   
-                </p>
-            </div>
-        </div>
-
-        <!-- Javascript -->
-        <script src="../static/assets/js/jquery-1.8.2.min.js"></script>
-        <script src="../static/assets/js/supersized.3.2.7.min.js"></script>
-        <script src="../static/assets/js/supersized-init.js"></script>
-        <script src="../static/assets/js/scripts.js"></script>
-
-    </body>
-
+</body>
 </html>
-

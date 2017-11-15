@@ -23,17 +23,29 @@ public class userController {
 	
 	@Autowired
 	userServie service;
-	
+	/**
+	 * 
+	 * @author:xielulin 
+	 * @Description: 登录引导页面
+	 * @return: 返回到登录
+	 * @throws:
+	 * @date:2017年11月15日 下午5:59:31
+	 */
 	@RequestMapping("/index")
 	public ModelAndView loginPage() {
 		return new ModelAndView("index");
 	}
-	
+	@RequestMapping("/register")
+	public ModelAndView registerPage() {
+		return new ModelAndView("register");
+	}
 	
 	@RequestMapping("/login")
 	public String login(@ModelAttribute("form") User user) {
 		
 		User users=new User();
+		System.out.println(user.getName());
+		System.out.println("密码："+user.getPwd());
 		users=service.login(user.getName(), user.getPwd());
 		if(users!=null)
 			return "登录成功，欢迎"+users.getName()+"<br/>您的信息为：<br/>"+users.toString();
@@ -52,11 +64,12 @@ public class userController {
 	 * @throws:
 	 * @date:2017年11月9日 下午2:56:45
 	 */
-	@RequestMapping("add/{name}/{pwd}")
-	public Result add(@PathVariable("name")String name,@PathVariable("pwd")String pwd) throws Exception {
-		User user=new User();
-		user.setName(name);
-		user.setPwd(pwd);
+	@RequestMapping("/add")
+	public Result add(@ModelAttribute("form") User user) throws Exception {
+		System.out.println(user.getName());
+		System.out.println(user.getPwd());
+		System.out.println(user.getSex());
+		System.out.println(user.getAge());
 		user=service.add(user);
 		/*if (name!=null)
 			throw new Exception();*/
