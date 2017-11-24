@@ -13,12 +13,12 @@
     <form method="post" action="/user/add" onsubmit="return user_input()" class="login" id="form">
     <p>
       <label for="login">帐号:</label>
-      <input type="text" name="name" id="name" class="name" value="name">
+      <input type="text" name="name" id="name" class="name" value="">
     </p>
 
     <p>
       <label for="login">密码:</label>
-      <input type="password" name="pwd" id="pwd"  class="pwd" value="pwd">
+      <input type="password" name="pwd" id="pwd"  class="pwd" value="">
     </p>
 	<p>
       <label for="login">年龄:</label>

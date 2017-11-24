@@ -50,7 +50,7 @@ public class userController {
 		if(users!=null)
 			return "登录成功，欢迎"+users.getName()+"<br/>您的信息为：<br/>"+users.toString();
 		else
-			return "登录失败，请重新输入";
+			return "index";
 	}
 	
 	/**
@@ -66,10 +66,7 @@ public class userController {
 	 */
 	@RequestMapping("/add")
 	public Result add(@ModelAttribute("form") User user) throws Exception {
-		System.out.println(user.getName());
-		System.out.println(user.getPwd());
-		System.out.println(user.getSex());
-		System.out.println(user.getAge());
+		
 		user=service.add(user);
 		/*if (name!=null)
 			throw new Exception();*/
