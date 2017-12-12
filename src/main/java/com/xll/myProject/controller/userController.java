@@ -20,7 +20,8 @@ import com.xll.myProject.utils.ResultUtil;
 @RestController
 @RequestMapping("/user")
 public class userController {
-	
+	@Autowired
+	com.xll.myProject.handle.ECARentContractHandler ECARentContractHandler;
 	@Autowired
 	userServie service;
 	/**
@@ -39,6 +40,23 @@ public class userController {
 	public ModelAndView registerPage() {
 		return new ModelAndView("register");
 	}
+	
+	
+	@RequestMapping("/ca/{code}")
+	public void CA(@PathVariable("code") String cod) {
+		try {
+			String code=cod;
+			ECARentContractHandler.reqCaRentContract(code);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			
+		}
+	}
+	
+	
+	
 	
 	@RequestMapping("/login")
 	public String login(@ModelAttribute("form") User user) {

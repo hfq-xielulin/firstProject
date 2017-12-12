@@ -19,4 +19,13 @@ spring:
 server: 
   tomcat:
     uri-encoding: UTF-8
+  port: 8081
         
+#CA supplier(eqianbao)
+hfq: 
+  ca:
+    supplier:
+      eqb:
+        projectId: 1111563517
+        projectSecret: 95439b0863c241c63a861b87d1e647b7
+        apisUrl: http://121.40.164.61:8080/tgmonitor/rest/app!getAPIInfo2
